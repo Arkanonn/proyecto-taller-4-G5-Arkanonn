@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "nombre": 1,
+        "descripcion" : "Lorem ipsum",
+        "votos": 0
+    },
+
+    {
+        "id": 2,
+        "nombre": 2,
+        "descripcion" : "Lorem ipsum",
+        "votos": 0
+    },
+
+    {
+        "id": 3,
+        "nombre": 3,
+        "descripcion" : "Lorem ipsum",
+        "votos": 0
+    },
+
+    {
+        "id": 4,
+        "nombre": 4,
+        "descripcion" : "Lorem ipsum",
+        "votos": 0
+    }
+]    
