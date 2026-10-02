@@ -3,8 +3,9 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import Link from "next/link";
 
+// dirreccion de botones 
 let direccion_boton_crear = "crear";
-let direccion_boton_unirse = "unirse";
+let direccion_boton_quiz = "quiz";
 
 export default function Home() {
   return (
@@ -22,15 +23,15 @@ export default function Home() {
         <h1>
           Titulo Principal
         </h1>
-        <div>
-          <Link href={direccion_boton_crear}> Crear </Link>
+        <div className="separador">
+          <div>
+            <Link className="link" href={direccion_boton_crear}> Crear </Link>
+          </div>
+          <div className="opcion">
+            <Link href={direccion_boton_quiz}> votacion </Link>
+          </div>
         </div>
-        <div>
-          <Link href={direccion_boton_unirse}> Unirse </Link>
-        </div>
-        <div>
-          <Link href={"votacion"}> votacion </Link>
-        </div>
+          
       </main>
     </div>
   );

@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "texto": "¿Qué propone la lista A?",
+    "opciones": ["X", "Y", "Z", "Y y Z"]
+  },
+  {
+    "id": 2,
+    "texto": "¿Cual/es lista/s proponen X?",
+    "opciones": ["Lista A y B", "Lista B", "Lista C"]
+  },
+  {
+    "id": 3,
+    "texto": "¿Qué lista/s pretende/n solucionar X de la manera Y?",
+    "opciones": ["Lista A", "Lista B", "Lista B y C", "Ninguna de las anteriores"]
+  }
+]
