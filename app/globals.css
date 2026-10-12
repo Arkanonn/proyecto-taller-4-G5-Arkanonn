@@ -22,7 +22,7 @@ body {
 }
 
 h1 {
-  font-family: sans-serif, Helvetica, arial;
+  font-family: Bungee,sans-serif, Helvetica, arial;
   color: rgba(5, 10, 55, 0.802);
   text-align: center;
 
@@ -53,6 +53,7 @@ div {
   
 }
 .bloque_link {
+  font-family: sans-serif;
   background-color: white;
   border-radius: 14px;
   padding: 20px 24px;
@@ -70,10 +71,7 @@ div {
   color: #2b3a67;
 }
 
-.div_home {
-  display: flex;
-  width: 100%;
-}
+
 
 .div_quiz {
   max-width: 700px;
@@ -106,9 +104,10 @@ div {
   margin-right: 10px;
 }
 
-.btn_enviar {
+.btn {
   width: 100%;
   padding: 12px;
+  font-family: "Lilita One";
   font-size: 1rem;
   border: none;
   border-radius: 8px;
@@ -116,19 +115,23 @@ div {
   color: white;
   cursor: pointer;
 }
-.btn_enviar:disabled {
+.btn:disabled {
   background-color: #c5d3dc;
   cursor: not-allowed;
 }
 
-.btn_votar {
-  width: 100%;
-  padding: 12px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 8px;
-  background-color: #4a90c2;
-  color: white;
-  cursor: pointer;
+/* Home */
+.div_main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-
+.div_home {
+  font-family: bungee;
+  font-size: large;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  width: auto;
+}

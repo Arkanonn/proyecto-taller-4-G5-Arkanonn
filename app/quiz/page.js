@@ -42,10 +42,10 @@ export default function Quiz() {
         {quiz_respondido ? 
         (
           <Link href={direccion_boton_enviar}>
-            <button className="btn_enviar">Enviar votación</button>
+            <button className="btn">Guardar cuestionari</button>
           </Link>
         ) : (
-          <button className="btn_enviar" disabled>
+          <button className="btn" disabled>
             Responde todas las preguntas
           </button>
         )}
