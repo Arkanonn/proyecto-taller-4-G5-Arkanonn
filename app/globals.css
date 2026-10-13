@@ -17,22 +17,26 @@
 
 /* Originales */
 body {
-  background-color: rgb(158, 223, 246);
+  background-color: rgb(246, 250, 255);
   padding:0;
 }
 
 h1 {
-  font-family: sans-serif, Helvetica, arial;
-  color: rgba(5, 10, 55, 0.802);
+  font-family: Arial, Helvetica, arial;
+  color: rgb(0, 18, 182);
   text-align: center;
 
 }
 
 h2 {
   font-family: sans-serif, Helvetica, arial;
-  color: rgb(5, 10, 55, 0.802);
+  color: rgb(0, 18, 182);
   text-align: center;
 
+}
+p {
+  color: rgb(39, 55, 199);
+  font-weight: 700;
 }
 
 div {
@@ -53,6 +57,7 @@ div {
   
 }
 .bloque_link {
+  font-family: sans-serif;
   background-color: white;
   border-radius: 14px;
   padding: 20px 24px;
@@ -70,10 +75,7 @@ div {
   color: #2b3a67;
 }
 
-.div_home {
-  display: flex;
-  width: 100%;
-}
+
 
 .div_quiz {
   max-width: 700px;
@@ -106,9 +108,10 @@ div {
   margin-right: 10px;
 }
 
-.btn_enviar {
+.btn {
   width: 100%;
   padding: 12px;
+  font-family: "Lilita One";
   font-size: 1rem;
   border: none;
   border-radius: 8px;
@@ -116,19 +119,124 @@ div {
   color: white;
   cursor: pointer;
 }
-.btn_enviar:disabled {
+.btn:disabled {
   background-color: #c5d3dc;
   cursor: not-allowed;
 }
 
-.btn_votar {
-  width: 100%;
-  padding: 12px;
+/* Home */
+.div_main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.div_home {
+  font-family: bungee;
+  font-size: large;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  width: auto;
+}
+
+/* Votacion */
+.votacion {
+  background-color: rgb(255, 255, 255);
+  margin: 0;
+  align-items: center;
+}
+.votacion h1 {
+  font-size: 48px;
+  color: rgb(255, 59, 24);
+  font-weight: 700;
+}
+.votacion h2 {
+  color: rgb(255, 59, 24);
+}
+.contenedor_opciones {
+  display: flex;
+  flex-direction: column;
+}
+.contenedor_opcion {
+  background-color: rgb(255, 240, 225);
+  padding: 10px 12px;
+  margin-top: 8px;
+  border: 1px solid #d5e6f0;
+  border-radius: 8px;
+  flex: 1;
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  grid-template-columns: 150px 1fr 120px 50px;
+  align-items: center;
+  border-bottom: 1.5px solid rgb(61, 60, 60);
+  border-left: 2px solid rgb(61, 60, 60);
+}
+.contenedor_opcion h2 {
+  color: rgb(207, 0, 0);
+}
+.contenedor_opcion ul {
+  margin: 8px 0px;
+  padding-left: 20px;
+}
+.contenedor_opcion li {
+  color: rgb(65, 0, 0);
+}
+.contenedor_opcion p {
+  color: rgb(167, 0, 0);
+  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.contenedor_opcion_h2 {
+  padding: 5px;
+  border-right: 2px solid rgb(119, 0, 0);
+}
+.contenedor_opcion_descripcion {
+  align-self: center;
+  padding: 5px 20px;
+  border-right: 2px solid rgb(119, 0, 0);
+  text-align: justify;
+}
+.contenedor_opcion_integrantes {
+  align-self: center;
+  text-align: center;
+}
+.contenedor_opcion_integrantes h2 {
+  font-size: 18px;
+  margin: 0;
+}
+.contenedor_opcion_marcador {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contenedor_opcion_marcador input[type="checkbox"] {
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  accent-color: rgb(176, 0, 0);
+}
+
+.btn_votacion {
+  width: 40%;
+  padding: 20px;
+  font-family: "Arial";
   font-size: 1rem;
   border: none;
   border-radius: 8px;
-  background-color: #4a90c2;
+  background-color: #c24a4a;
   color: white;
+  text-decoration: none;
   cursor: pointer;
+  align-self: center;
+  display: block;
+  margin: 0 auto;
+
+}
+.btn_votacion:disabled {
+  background-color: #dcc5c5;
+  cursor: not-allowed;
+  align-self: auto;
 }
 

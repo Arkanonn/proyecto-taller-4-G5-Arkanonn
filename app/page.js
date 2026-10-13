@@ -10,7 +10,7 @@ let direccion_boton_quiz = "quiz";
 export default function Home() {
   return (
     <div className={styles.page}>
-      <main className={styles.main}>
+      <main className="div_main">
         <Image
           className={styles.logo}
           src="/next.svg"
@@ -25,7 +25,8 @@ export default function Home() {
         </h1>
         <div className="div_home">
 
-            <Link className="bloque_link" href={direccion_boton_crear}> Crear </Link>
+            <Link className="bloque_link" href={direccion_boton_crear}> crear
+            </Link>
 
             <Link className="bloque_link" href={direccion_boton_quiz}> votacion </Link>
           
