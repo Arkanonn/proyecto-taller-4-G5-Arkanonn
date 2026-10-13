@@ -4,7 +4,7 @@ import { useState } from "react";
 import preguntas from "../../data/preguntas.json"
 
 // dirección de botones
-let direccion_boton_enviar = "votacion";
+let direccion_boton_enviar = "votacion/plantilla";
 
 
 export default function Quiz() {
