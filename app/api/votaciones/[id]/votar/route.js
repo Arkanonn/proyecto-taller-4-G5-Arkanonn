@@ -3,12 +3,7 @@ import { randomUUID } from "node:crypto";
 import pool from "@/lib/db";
 import { generarHash } from "@/lib/tokens";
 import { obtenerSpreadsheet } from "@/lib/google/drive";
-import {
-    obtenerDatosPestana,
-    convertirFilasAObjetos,
-    convertirFilasAListas,
-    registrarVoto
-} from "@/lib/google/sheets";
+import { obtenerDatosPestana, convertirFilasAObjetos, convertirFilasAListas, registrarVoto } from "@/lib/google/sheets";
 import { obtenerEstadoVotacion } from "@/lib/votaciones";
 
 export const runtime = "nodejs";
