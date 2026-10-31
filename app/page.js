@@ -2,10 +2,10 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import Link from "next/link";
+import BotonSincronizar from "@/app/components/BotonSincronizar";
 
 // dirección de botones 
 let direccion_boton_crear = "crear";
-let direccion_boton_quiz = "quiz";
 
 export default function Home() {
   return (
@@ -25,12 +25,10 @@ export default function Home() {
         </h1>
         <div className="div_home">
 
-            <Link className="bloque_link" href={direccion_boton_crear}> crear
-            </Link>
-
-            <Link className="bloque_link" href={direccion_boton_quiz}> votacion </Link>
+            <Link className="bloque_link" href={direccion_boton_crear}> crear </Link>
           
         </div>
+
           
       </main>
     </div>
