@@ -6,7 +6,7 @@ export async function POST() {
         const eleccionId = 1;
         const correo = "prueba@universidad.cl";
 
-        const token = generarToken();
+        const token = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
         const hash = generarHash(token);
 
         const resultado = await pool.query(

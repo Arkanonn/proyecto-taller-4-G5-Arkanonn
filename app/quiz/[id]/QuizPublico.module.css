@@ -1,0 +1,80 @@
+
+.body {
+    padding: 10px;
+}
+.body h1 {
+    font-size: 54px;
+    color: #0055ff;
+    padding: 50px;
+}
+.body p {
+    color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+    
+}
+
+.bloque {
+    background-color: white;
+    border-radius: 14px;
+    padding: 10px 15px 24px 24px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;  
+}
+
+.opcion {
+    background-color: #eeeeee;
+    font-size: 18px;
+    color: #333333;
+    border: 2px solid #cccccc;
+    border-radius: 8px;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    width:100%;
+}
+
+.opcion:hover {
+    background-color: #dddddd;
+    width:100%;
+}
+
+.opcionSeleccionada {
+    background-color: #2563eb;
+    font-size: 18px;
+    color: white;
+    border: 2px solid #1d4ed8;
+    border-radius: 8px;
+    padding: 12px 20px;
+    cursor: pointer;
+    width:100%;
+}
+.btn {
+    margin: 20px 0;
+    background-color: #fff;
+    font-size: 18px;
+    color: #333333;
+    border: 2px solid #cccccc;
+    border-radius: 8px;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    width:97%;
+}
+.btn:hover {
+    background-color: #00ffbb;
+    color: #eeeeee;
+    width:97%;
+}
+.btn:disabled {
+    background-color: #aaa;
+    width:97%;
+}
+.btn:disabled:hover {
+    background-color: #ff3300;
+    width:97%;
+}

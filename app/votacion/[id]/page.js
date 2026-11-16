@@ -1,5 +1,8 @@
 "use client"
 import Image from "next/image";
+
+import styles from "./votacion.module.css"
+
 import Link from "next/link";
 import { useParams, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -11,6 +14,8 @@ export default function Votacion() {
 
   const searchParams = useSearchParams();
   const token = searchParams.get("token");
+
+  const [quizRespondido, setQuizRespondido] = useState(null);
   
   // variable para ver si una opción fue seleccionada y la función que la altera
   const [seleccionada, setSeleccionada] = useState(null);
@@ -101,10 +106,53 @@ export default function Votacion() {
     }
   }, [id, token]);
 
+  
+useEffect(() => {
+    async function verificarQuiz() {
+        try {
+            console.log("ID:", id);
+            console.log("TOKEN:", token);
+
+            const respuesta = await fetch(
+                `/api/votaciones/${encodeURIComponent(id)}/quiz/estado?token=${encodeURIComponent(token)}`
+            );
+
+            console.log("Estado HTTP:", respuesta.status);
+
+            const datos = await respuesta.json();
+
+            console.log("Respuesta API:", datos);
+
+            if (!respuesta.ok) {
+                setError(datos.error || "No se pudo verificar el quiz");
+                return;
+            }
+
+            setQuizRespondido(datos.quizRespondido);
+
+            if (datos.quizRespondido === false) {
+                router.replace(
+                    `/quiz/${id}?token=${encodeURIComponent(token)}`
+                );
+            }
+
+        } catch (error) {
+            console.error("Error verificando quiz:", error);
+            setError("Error al verificar el quiz");
+        }
+    }
+
+    if (token && id) {
+        verificarQuiz();
+    }
+
+  }, [token, id, router]);
+
+
   // si el voto fue confirmado, mostrar mensaje de confirmación
   if (votoConfirmado) {
     return (
-      <div className="votacion" style={{
+      <div className={styles.body} style={{
         textAlign: "center",
         padding: "60px 20px"
       }}>
@@ -131,7 +179,7 @@ export default function Votacion() {
   
   // mientras obtiene la informacion
   if (votacion === null) {
-    return <h2>Cargando...</h2>
+    return <div className={styles.body}><h2>Cargando...</h2></div>
   }
 
   // verifica el token
@@ -150,6 +198,7 @@ export default function Votacion() {
     );
   }
 
+  // Lo que hara la pagina dependiendo del estado de la votacion
   if (votacion.estado === "pendiente") {
     return (
       <div className="votacion">
@@ -226,41 +275,53 @@ export default function Votacion() {
     }
   }
 
+
   // si todo salio bien mostrara esto
   return (
-    <div className="votacion">
+
+    <div className={styles.body}>
       {/* botón para ir a home*/ }
-      <Link className="bloque_link" href={"/"}>Home</Link>
+      <Link className={styles.btn} href={"/"}>Home</Link>
 
       <h1>{votacion.nombre}</h1>
-      <h2>Fecha Inicio: {new Date(votacion.FechaInicio).toLocaleString("es-CL")} | Fecha Termino: {new Date(votacion.FechaTermino).toLocaleString("es-CL")}</h2>
-      
-      <h2>Listas</h2>
-      <div className="contenedor_opciones">
-        {votacion.listas.map((lista) => (
-          <div className="contenedor_opcion" key={lista.id}>
-            <div className="contenedor_opcion_h2"><h2>{lista.nombreLista}</h2></div>
-              
-            <div className="contenedor_opcion_descripcion"><p>{lista.descripcion}</p></div>
 
-            <div className="contenedor_opcion_integrantes">
-              <h2>Integrantes:</h2>
+      <h2>Listas</h2>
+      <div className={styles.contenedor_opciones}>
+        {votacion.listas.map((lista) => (
+          <button
+            className={
+              seleccionada === lista.id ? styles.opcionSeleccionada : styles.opcion
+            }
+            key={lista.id}
+            type="button"
+            onClick={() =>
+              setSeleccionada(
+                  seleccionada === lista.id ? null : lista.id
+              )
+            }
+          >
+            <div>
+                <h3>{lista.nombreLista}</h3>
+            </div>
+          
+            <div>
+                <p>{lista.descripcion}</p>
+            </div>
+          
+            <div className={styles.integrantes}>
+              <h3>Integrantes:</h3>
               <ul>
                 {lista.integrantes.map((i, indice) => (
                   <li key={indice}>{i}</li>
                 ))}
               </ul>
             </div>
-            
-            <div className="contenedor_opcion_marcador">
-              <input type="checkbox" checked={seleccionada === lista.id} onChange={() => setSeleccionada(seleccionada === lista.id ? null : lista.id)}/>
-            </div>
-          </div>
+          </button>
         ))}
       </div>
 
       <button
-        className="btn_votacion"
+        className={styles.btn}
         onClick={enviarVoto}
         disabled={seleccionada === null || enviando}
       >

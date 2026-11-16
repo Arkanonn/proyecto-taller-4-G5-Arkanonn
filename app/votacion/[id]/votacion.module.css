@@ -1,0 +1,90 @@
+.body {
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #e0e0e0;
+}
+
+.body h1 {
+    color: #bb3333;
+    font-size: 60px;
+}
+.body h2 {
+    font-size: 48px;
+}
+.body h3 {
+    margin: 10px 0px;
+    font-size: 30px;
+}
+.body a {
+    margin: 0px;
+    color: #bb3333;
+    width: 55px;
+    display: flex;
+    align-items: start;
+    text-decoration: none;
+}
+
+.contenedor_opciones {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+@media (max-width: 600px) {
+    .contenedor_opciones {
+        grid-template-columns: 1fr;
+    }
+}
+.contenedor_opciones p {
+    font-size: 18px;
+}
+.opcion {
+    margin: 10px 0px;
+    border: #ffffff solid 0px;
+    border-radius: 15px;
+}
+.opcion:hover{
+    background-color: #bbb;
+}
+.opcionSeleccionada {
+    background-color: #bb3333;
+    color: #ddd;
+    margin: 10px 0px;
+    border: #ffffff solid 0px;
+    border-radius: 15px;
+}
+.integrantes {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+.integrantes ul {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    width: auto;
+}
+.integrantes li {
+    text-align: center;
+}
+
+.btn {
+    background-color: #eee;
+    padding: 18px;
+    font-size: 18px;
+    margin: 0px 10px;
+    width: 97%;
+    
+    border: #ffffff solid 0px;
+    border-radius: 15px;
+}
+.btn:hover {
+    background-color: #ff5555;
+    color:black
+}
+.btn:disabled {
+    background-color: #bbb;
+}
+.btn:disabled:hover {
+    color: #888;
+}
